@@ -485,6 +485,7 @@ TCB中保存的上下文信息包括但不限于以下内容：
 ## 三十四、构造函数、拷贝构造函数、移动构造函数
 
   下面的例子解释了如何编写拷贝构造函数，移动构造函数。另外，vector容器的初始化会调用默认构造函数；下面的例子声明了一个容量为3的vector，所以调用了三次默认构造函数。
+
     ```cpp
     class MyStruct
     {
@@ -570,6 +571,9 @@ TCB中保存的上下文信息包括但不限于以下内容：
         myVector[1] = std::move(ms1);
         // myVector.push_back(std::move(ms1));
         std::cout << std::endl;
+
+        // myVector[2] = MyStruct("cpp");
+        // std::cout << std::endl;
 
         std::cout << (ms.data != nullptr) << " " << (ms1.data == nullptr) << "\n";
         for (const auto &it : myVector)
