@@ -252,6 +252,10 @@ while (!stack.empty() || root) {
 /**
  * @brief 只用一个变量一个栈实现后序遍历。
  * return nullptr的意义是 当前栈顶指向的子树检查完毕
+ * 
+ * 第一次遇见————进栈
+ * 第二次遇见————转到右孩子
+ * 第三次遇见————退栈
  */
 while (!stack.empty() || root) {
     if (root) {
