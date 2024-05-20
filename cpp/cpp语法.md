@@ -571,7 +571,7 @@ TCB中保存的上下文信息包括但不限于以下内容：
         std::cout << std::endl;
 
         MyStruct ms1("World");
-        myVector[1] = std::move(ms1);
+        myVector[1] = std::move(ms1); // move函数不会导致ms1调用析构函数，在出作用域时，ms1的析构函数被调用
         // myVector.push_back(std::move(ms1));
         std::cout << std::endl;
 
