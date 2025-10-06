@@ -1,21 +1,14 @@
 {
     "files.autoSave": "afterDelay",
-    "[c]": {
-
-    },
+    "[c]": {},
     "files.encoding": "utf8",
     "files.autoGuessEncoding": true,
-    
     "explorer.confirmDragAndDrop": false,
-    
     "C_Cpp.errorSquiggles": "enabled",
-    
     "editor.guides.bracketPairs": false,
-
     "backgroundCover.imagePath": "D:\\图片\\联想锁屏壁纸\\wallhaven-j3rgqw.jpg",
     "backgroundCover.autoStatus": false,
     "backgroundCover.opacity": 0.4,
-
     "workbench.colorTheme": "Monokai",
     "workbench.editor.decorations.colors": true,
     "workbench.tips.enabled": true,
@@ -77,6 +70,7 @@
         "new": "cpp",
         "sstream": "cpp",
         "stdexcept": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "random": "cpp"
     }
 }

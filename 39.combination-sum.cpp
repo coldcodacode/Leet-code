@@ -24,6 +24,8 @@ using namespace std;
 #include <vector>
 // @lcpr-template-end
 // @lc code=start
+// 优化：利用无重复，找到合适的tmp后，剩余的数组元素不用遍历，可剪枝
+// 优化2：利用排序，可以跳过很多无意义的遍历
 class Solution
 {
 public:
