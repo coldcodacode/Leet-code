@@ -26,46 +26,22 @@ using namespace std;
 // @lc code=start
 class Solution
 {
-private:
-    int size;
-    int k;
-    int findPos(int pos) {
-        return (pos + k) % size; 
-    }
-    void init(int size, int k) {
-        size = size;
-        k = k;
-    } 
-    // 0, k - remainder, 2(k - remainder) % k, 
-    vector<int> calClosure(int k, int remainder) {
-        vector<int> res;
-        int start = 0;
-        int cur = start;
-        do {
-            cur = (cur + k - remainder) % k; 
-        } while(cur != start);
-        res.push_back(start);
-        return res;
-    }
 public:
     void rotate(vector<int> &nums, int k)
-    {
-        init(nums.size(), k);
-        int remainder = size % k;
-        vector<int> closure = calClosure(k, remainder);
-        for (int i = 0; i < closure.size(); i++) {
-            int curIdx = closure[i];
-            int curVal = nums[curIdx];
-            int nextIdx;
-            int nextVal;
-            int originIdx = curIdx;
+    {   
+        int length = nums.size();
+        int targetIdx = 0;
+        int curIdx = 0;
+        int count = 0;
+        for (int start = 0; count < length; start++) {
+            curIdx = start;
+            int tmp = nums[curIdx];
             do {
-                nextIdx = findPos(curIdx);
-                nextVal = nums[nextIdx];
-                nums[nextIdx] = curVal; 
-                curIdx = nextIdx;
-                curVal = nextVal;
-            } while(originIdx != curIdx);
+                targetIdx = (curIdx + k) % length;
+                swap(tmp, nums[targetIdx]);
+                count++;
+                curIdx = targetIdx;
+            } while (curIdx != start);
         }
     }
 };
